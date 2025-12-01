@@ -1,7 +1,16 @@
 <!DOCTYPE html>
 <html>
+<header>
+<nav>
+  <%= link_to "Home", root_path %> |
+  <%= link_to "Help", static_pages_help_path %> |
+  <%= link_to "About", static_pages_about_path %>
+</nav>
+</header>
   <head>
-    <title>HelloApp</title>
+    <title> 
+    <%= full_title(yield(:title)) %> | Ruby on Rails Tutorial Sample App
+    </title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
