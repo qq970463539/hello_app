@@ -10,3 +10,11 @@ body {
   border-top: 1px solid $gray-light;
   color: #777;
 }
+
+#error_explanation {
+  color: #a94442;
+}
+
+.field_with_errors .form-control {
+  border-color: #a94442;
+}
