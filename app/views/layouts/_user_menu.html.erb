@@ -1,0 +1,26 @@
+<li class="nav-item dropdown d-flex align-items-center">
+    <%= gravatar_for(current_user, size: 28) %>
+  
+    <a class="nav-link dropdown-toggle ms-2" href="#" id="userMenu"
+       role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <%= current_user.name %>
+    </a>
+  
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userMenu">
+      <li>
+        <%= link_to "Profile", current_user, class: "dropdown-item" %>
+      </li>
+  
+      <li>
+        <%= link_to "Settings", edit_user_path(current_user), class: "dropdown-item" %>
+      </li>
+  
+      <li><hr class="dropdown-divider"></li>
+  
+      <li>
+        <%= link_to "Log out", logout_path,
+              data: { "turbo-method": :delete },
+              class: "dropdown-item text-danger" %>
+      </li>
+    </ul>
+  </li>
