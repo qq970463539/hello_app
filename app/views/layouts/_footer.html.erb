@@ -1,5 +1,10 @@
-<footer class="footer text-center mt-4 mb-3">
-  <small>
-    Ruby on Rails Tutorial Sample App
-  </small>
+<footer class="footer text-center py-3">
+  <div class="container">
+    <small>Ruby on Rails Tutorial Sample App</small>
+    <ul class="list-inline mt-2">
+      <li class="list-inline-item"><%= link_to "About", about_path %></li>
+      <li class="list-inline-item"><%= link_to "Contact", contact_path %></li>
+      <li class="list-inline-item"><a href="https://news.railstutorial.org/">News</a></li>
+    </ul>
+  </div>
 </footer>
