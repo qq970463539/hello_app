@@ -1,0 +1,40 @@
+<% provide(:title, "Edit user") %>
+<h1>Update your profile</h1>
+
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <%= form_with(model: @user, local: true) do |f| %>
+
+      <%= render 'shared/error_messages', object: @user %>
+
+      <div class="mb-3">
+        <%= f.label :name %>
+        <%= f.text_field :name, class: "form-control" %>
+      </div>
+
+      <div class="mb-3">
+        <%= f.label :email %>
+        <%= f.email_field :email, class: "form-control" %>
+      </div>
+
+      <div class="mb-3">
+        <%= f.label :password %>
+        <%= f.password_field :password, class: "form-control", placeholder: "Leave blank if you don't want to change" %>
+      </div>
+
+      <div class="mb-3">
+        <%= f.label :password_confirmation, "Confirmation" %>
+        <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Leave blank if you don't want to change" %>
+      </div>
+
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+    <% end %>
+
+    <hr>
+
+    <%= gravatar_for(@user) %>
+    <a href="https://gravatar.com/emails" target="_blank" rel="noopener">
+      change
+    </a>
+  </div>
+</div>
