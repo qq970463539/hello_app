@@ -5,11 +5,7 @@
         <strong><%= link_to micropost.user.name, micropost.user %></strong>
 
         <% if current_user?(micropost.user) %>
-          <%= link_to "delete",
-                      micropost,
-                      method: :delete,
-                      data: { confirm: "Are you sure?" },
-                      class: "text-danger small" %>
+        <%= link_to "delete", micropost, data: { turbo_method: :delete, turbo_confirm: "You sure?" },class: "text-danger small" %>
         <% end %>
       </div>
 

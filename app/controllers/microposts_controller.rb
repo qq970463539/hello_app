@@ -16,14 +16,14 @@ class MicropostsController < ApplicationController
   def destroy
     @micropost.destroy
     flash[:success] = "Micropost deleted"
-    redirect_to request.referer || root_url, status: :see_other
+    redirect_to request.referrer || root_url, status: :see_other
   end
 
   private
 
-    def micropost_params
-      params.require(:micropost).permit(:content)
-    end
+  def micropost_params
+    params.require(:micropost).permit(:content, :image)
+  end
 
     def correct_user
       @micropost = current_user.microposts.find_by(id: params[:id])
