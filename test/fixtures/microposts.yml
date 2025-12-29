@@ -1,0 +1,14 @@
+one:
+  content: "Lorem ipsum"
+  created_at: <%= 10.minutes.ago %>
+  user: qqkun
+
+two:
+  content: "Dolor sit amet"
+  created_at: <%= 3.years.ago %>
+  user: qqkun
+
+most_recent:
+  content: "Writing a short test"
+  created_at: <%= Time.zone.now %>
+  user: qqkun

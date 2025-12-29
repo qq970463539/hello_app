@@ -1,0 +1,17 @@
+<% @user ||= current_user %>
+
+<div class="stats d-flex justify-content-center gap-4 my-3">
+  <div class="text-center">
+    <%= link_to following_user_path(@user), class: "text-decoration-none" do %>
+      <div class="fw-bold fs-4"><%= @user.following.count %></div>
+      <div class="text-muted">Following</div>
+    <% end %>
+  </div>
+
+  <div class="text-center">
+    <%= link_to followers_user_path(@user), class: "text-decoration-none" do %>
+      <div class="fw-bold fs-4"><%= @user.followers.count %></div>
+      <div class="text-muted">Followers</div>
+    <% end %>
+  </div>
+</div>
