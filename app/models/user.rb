@@ -89,11 +89,11 @@ class User < ApplicationRecord
                     length: { maximum: 255 },
                     format: { with: VALID_EMAIL_REGEX },
                     uniqueness: true
-
-  private
-
   def create_activation_digest
     self.activation_token  = User.new_token
     self.activation_digest = User.digest(activation_token)
   end
+  private
+
+
 end
